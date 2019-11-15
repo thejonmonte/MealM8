@@ -18,22 +18,29 @@
         android:text="@string/login_message"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="?android:attr/borderlessButtonStyle"
+        android:textSize="20sp"
+        android:background="@drawable/rectangle"
+        />
+
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="250dp"
-        android:layout_height="44dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="310dp"
+        android:layout_height="47dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="@string/register_message"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />/>
 
     <Button
         android:id="@+id/button5"
@@ -48,6 +55,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        style="?android:attr/borderlessButtonStyle"
+        android:textSize="12sp"/>/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
