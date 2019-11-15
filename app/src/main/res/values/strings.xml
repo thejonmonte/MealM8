@@ -3,5 +3,6 @@
     <string name="enter_ingredient">Enter an ingredient</string>
     <string name="button_addingredient">Add Ingredient</string>
     <string name="button_findrecipes">Find Recipes</string>
-
+    <string name="recipe_details_ingredients_label">Ingredients</string>
+    <string name="recipe_details_button_bookmark">Bookmark</string>
 </resources>
