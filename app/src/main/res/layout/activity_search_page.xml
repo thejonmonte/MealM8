@@ -8,15 +8,16 @@
     tools:context=".SearchPageActivity">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/searchInput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="Enter an ingredient..."
+        android:imeOptions="actionSend"
         android:inputType="textPersonName"
-        android:text="@string/enter_ingredient"
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,12 +31,12 @@
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="Button"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editText"
+        android:onClick="addIngredient"
+        android:text="Add Ingredient"
+        app:layout_constraintBaseline_toBaselineOf="@+id/searchInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editText"
-        tools:text="@string/button_addingredient" />
+        app:layout_constraintStart_toEndOf="@+id/searchInput" />
 
     <Button
         android:id="@+id/button2"
@@ -44,12 +45,13 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="20dp"
+        android:onClick="findRecipes"
         android:text="@string/button_findrecipes"
-        app:layout_constraintStart_toEndOf="@+id/editText"
+        app:layout_constraintStart_toEndOf="@+id/searchInput"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/inputtedIngredients"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -58,7 +60,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
-        android:text="TextView"
+        android:text="Entered Ingredients: "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
