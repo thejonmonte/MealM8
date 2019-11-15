@@ -26,7 +26,7 @@ public class Recipes {
         try {
             URL url = new URL("https://api.edamam.com/search?q=" +
                     ingredientsString.toString().substring(0, ingredientsString.length()-1) +
-                    "&app_id=$" + app_id + "&app_key=$" + app_key);
+                    "&app_id=$" + app_id + "&app_key=$" + app_key + "&from=0&to=50");
             con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
             con.setRequestProperty("Content-length", "0");
