@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class Recipes {
     private static final String app_id = "cf5ba5f1";
-    private static final String app_key = "228bb270794c3dcc69d293f7f0c1ea33\t";
+    private static final String app_key = "228bb270794c3dcc69d293f7f0c1ea33";
 
     public static JSONObject search(ArrayList<String> ingredients) {
         // Build the ingredients string
