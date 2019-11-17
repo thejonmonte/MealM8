@@ -1,6 +1,7 @@
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.json.simple.JSONArray;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -31,7 +32,7 @@ public class Database {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection(jdbc_url);
+            //conn = DriverManager.getConnection(url);
 
             ps = conn.prepareStatement(insertString);
 
@@ -118,6 +119,7 @@ public class Database {
         // Check if user is in base
         String favoriteString = "SELECT * FROM Recipe ORDER BY timesSaved DESC";
         ArrayList<JSONObject> favorites = new ArrayList<JSONObject>();
+        //String url2 = System.getProperty("ae-cloudsql.cloudsql-database-url");
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -126,6 +128,7 @@ public class Database {
             rs = stmt.executeQuery(favoriteString);
             System.out.println("Hello!");
             while (rs.next()) {
+                System.out.println(rs.getString("recipeURI"));
                 // Make GET request to the Edamam Recipe API to get JSON String
                 HttpURLConnection con = null;
                 String recipesString = null;
@@ -154,6 +157,7 @@ public class Database {
                             }
                             bufferedReader.close();
                             recipesString = stringBuilder.toString();
+                            //System.out.println(recipesString);
                     }
                 } catch (IOException e) {
                     System.out.println(e.getMessage());
@@ -169,11 +173,10 @@ public class Database {
 
                 // Parse JSON String using Simple JSON
                 JSONParser parser = new JSONParser();
-                JSONObject recipesData = null;
+                JSONArray recipesDataArray = null;
                 try {
-                    recipesData = (JSONObject) parser.parse(recipesString);
-                    favorites.add(recipesData);
-                    System.out.println(recipesData + "\n\n\n\n");
+                    recipesDataArray = (JSONArray) parser.parse(recipesString);
+                    favorites.add((JSONObject) recipesDataArray.get(0));
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }

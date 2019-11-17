@@ -1,0 +1,2 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('mysql-socket-factory-1.0.15-jar-with-dependencies.jar'))

@@ -29,4 +29,5 @@ dependencies {
     implementation files('libs/json-simple-1.1.1.jar')
     implementation project(path: ':mysql-connector-java-5.1.46')
     implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation project(path: ':mysql-socket-factory-1.0.15-jar-with-dependencies')
 }
