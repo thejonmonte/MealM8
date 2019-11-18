@@ -1,3 +1,5 @@
+package backend;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -176,7 +178,9 @@ public class Database {
                 JSONArray recipesDataArray = null;
                 try {
                     recipesDataArray = (JSONArray) parser.parse(recipesString);
-                    favorites.add((JSONObject) recipesDataArray.get(0));
+                    JSONObject recipes = (JSONObject) recipesDataArray.get(0);
+                    recipes.put("TimesSaved", rs.getInt("timesSaved"));
+                    favorites.add(recipes);
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
