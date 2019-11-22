@@ -1,2 +1,2 @@
-include ':app', ':mysql-connector-java-5.1.46'
+include ':app', ':mysql-connector-java-5.1.46', ':mysql-socket-factory-1.0.15-jar-with-dependencies'
 rootProject.name='MealM8'
